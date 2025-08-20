@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solo Leveling Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: radial-gradient(circle at center, #0a0a0f 0%, #000000 100%);
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    /* Intro text at the very top */
+    .intro-text {
+      width: 100%;
+      padding: 30px 20px;
+      text-align: center;
+      background: rgba(10, 10, 30, 0.8);
+      border-bottom: 2px solid #00f6ff;
+      box-shadow: 0 0 10px #00f6ff, 0 0 20px rgba(0, 246, 255, 0.5);
+      font-size: 1.2rem;
+    }
+
+    /* Title */
+    header {
+      width: 100%;
+      text-align: center;
+      padding: 20px;
+      background: rgba(10, 10, 30, 0.9);
+      border-bottom: 3px solid #00f6ff;
+      box-shadow: 0 0 15px #00f6ff, 0 0 30px rgba(0, 246, 255, 0.7);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      text-shadow: 0 0 15px #00f6ff, 0 0 30px #00f6ff;
+    }
+
+    /* Menu container */
+    .menu {
+      width: 100%;
+      min-height: calc(100vh - 160px); /* adjust for intro + header */
+      background: rgba(10, 10, 30, 0.85);
+      border: 3px solid #00f6ff;
+      border-top: none;
+      box-shadow: 0 0 20px #00f6ff, 0 0 60px rgba(0, 246, 255, 0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px 20px;
+      gap: 60px;
+      animation: flicker 2s infinite alternate;
+    }
+
+    /* Buttons 2x2 grid */
+    .button-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .button-grid button {
+      background: rgba(0, 246, 255, 0.2);
+      border: 2px solid #00f6ff;
+      color: #fff;
+      font-size: 1.2rem;
+      padding: 15px 30px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .button-grid button:hover {
+      background: #00f6ff;
+      color: #000;
+      box-shadow: 0 0 20px #00f6ff, 0 0 40px #00f6ff;
+    }
+
+    /* Right-side image */
+    .menu-right img {
+      max-width: 600px;
+      border: 2px solid #00f6ff;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #00f6ff, 0 0 30px rgba(0, 246, 255, 0.7);
+    }
+
+    @keyframes flicker {
+      0% { box-shadow: 0 0 10px #00f6ff, 0 0 25px rgba(0, 246, 255, 0.6); }
+      100% { box-shadow: 0 0 25px #00f6ff, 0 0 60px rgba(0, 246, 255, 0.9); }
+    }
+  </style>
+</head>
+<body>
+  
+
+  <!-- Title -->
+  <header>
+    <h1>Hunter's Menu</h1>
+  </header>
+   <!-- Intro text -->
+  <div class="intro-text">
+    Welcome to the Hunter's interface! Here you can manage your inventory, track quests, and monitor your stats before heading into the dungeon.
+  </div>
+
+  <!-- Menu -->
+  <div class="menu">
+    <!-- Buttons in 2x2 -->
+    <div class="button-grid">
+      <button>Inventory</button>
+      <button>Quests</button>
+      <button>Stats</button>
+      <button>Exit</button>
+    </div>
+
+    <!-- Image -->
+    <div class="menu-right">
+      <img src="resume.jpeg" alt="Character">
+    </div>
+  </div>
+</body>
+</html>
