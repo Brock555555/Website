@@ -106,44 +106,6 @@
     animation: flicker 2s infinite alternate;
   }
 
-  .intro-text {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 30px 20px;
-    background: rgba(10, 10, 30, 0.8);
-    border-bottom: 2px solid #00f6ff;
-    box-shadow: 0 0 10px #00f6ff, 0 0 20px rgba(0, 246, 255, 0.5);
-    text-align: left;
-    width: 90%;       /* container takes up 90% of the window width */
-    max-width: 800px; /* optional: prevents it from being too wide */
-    margin: 0 auto;   /* horizontally center the container */
-    box-sizing: border-box; /* ensures padding doesn’t exceed width */
-  }
-
-  /* Container for name + image */
-  .intro-left {
-    display: flex;
-    flex-direction: column; /* stack name above image */
-    align-items: center;    /* center horizontally */
-    gap: 10px;
-  }
-
-  /* Image styling */
-  .intro-left img.intro-img {
-    width: 200px;    /* adjust as needed */
-    height: auto;
-    border-radius: 12px;
-    border: 2px solid #00f6ff;
-    box-shadow: 0 0 10px #00f6ff;
-  }
-
-  /* Paragraph styling */
-  .intro-text p {
-    flex: 1;        /* take remaining space */
-    font-size: 1.2rem;
-  }
-
   /* Buttons 2x2 grid */
   .button-grid {
     display: grid;
@@ -193,39 +155,15 @@
 <div class="site-content">
   <!-- Title -->
   <header>
-    <h1>CS Graphics & Design</h1>
+    <h1>Hunter's Menu</h1>
   </header>
 
+  <!-- Intro text -->
   <div class="intro-text">
-    <!-- Left side: name above image -->
-    <div class="intro-left">
-      <h1>Brock Allan</h1>
-      <img src="face.jpg" alt="Character" class="intro-img">
-    </div>
-
-    <!-- Right side: paragraph text -->
-    <p>
-      Currently an undergraduate student at University of California Irvine.<br>
-      Pursuing a Bachelors degree in Computer Science with a specialization in Artificial Intelligence.<br>
-      Experimenting with Game Design using Unity and Unreal Engine 5.<br>
-      I hold LA certification and have professional experience with professor's Ferguson and Alfaro.
-    </p>
+    Welcome to the Hunter's interface! Here you can manage your inventory, track quests, and monitor your stats before heading into the dungeon.
   </div>
 
-  <!-- Menu -->
-  <div class="menu">
-    <div class="button-grid">
-      <a href="Github_Projects.html"><button>Github_Projects</button></a>
-      <button>Quests</button>
-      <button>Stats</button>
-      <button>Exit</button>
-    </div>
-
-    <div class="menu-right">
-      <img src="resume.jpeg" alt="Character">
-    </div>
-  </div>
-</div>
+  
 
 <script>
   // Show site content once overlay animation ends
