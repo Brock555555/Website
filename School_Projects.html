@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>School Projects</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: radial-gradient(circle at center, #0a0a0f 0%, #000000 100%);
+    font-family: 'Segoe UI', sans-serif;
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ====== Opening Animation Overlay ====== */
+  .opening-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeOut 0.8s ease forwards;
+    animation-delay: 2.2s; /* Wait until spin finishes */
+  }
+
+  /* Hollow diamond using borders */
+  .diamond {
+    width: 500px;
+    height: 500px;
+    transform: rotate(45deg);
+    border: 5px solid #00f6ff;
+    background: transparent;
+    box-shadow: 0 0 20px #00f6ff, 0 0 40px #00f6ff, 0 0 60px #00f6ff;
+    animation: spin 2s cubic-bezier(0.68,-0.55,0.27,1.55);
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(45deg) scale(0.33); opacity: 0; }
+    33% { transform: rotate(45deg) scale(0.66); opacity: 1;}
+    100% { transform: rotate(450deg) scale(3); opacity: 1; }
+  }
+
+  @keyframes fadeOut {
+    to { opacity: 0; visibility: hidden; }
+  }
+
+  /* Hide main content until overlay is gone */
+  .site-content {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+  }
+  .site-content.show {
+    opacity: 1;
+  }
+
+  /* ====== Intro text ====== */
+  .intro-text {
+    width: 100%;
+    padding: 30px 20px;
+    text-align: center;
+    background: rgba(10, 10, 30, 0.8);
+    border-bottom: 2px solid #00f6ff;
+    box-shadow: 0 0 10px #00f6ff, 0 0 20px rgba(0, 246, 255, 0.5);
+    font-size: 1.2rem;
+  }
+
+  /* ====== Title ====== */
+  header {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    background: rgba(10, 10, 30, 0.9);
+    border-bottom: 3px solid #00f6ff;
+    box-shadow: 0 0 15px #00f6ff, 0 0 30px rgba(0, 246, 255, 0.7);
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+    text-shadow: 0 0 15px #00f6ff, 0 0 30px #00f6ff;
+  }
+
+  /* ====== Menu container ====== */
+  .menu {
+    width: 100%;
+    min-height: calc(100vh - 160px);
+    background: rgba(10, 10, 30, 0.85);
+    border: 3px solid #00f6ff;
+    border-top: none;
+    box-shadow: 0 0 20px #00f6ff, 0 0 60px rgba(0, 246, 255, 0.7);
+    display: flex;
+    justify-content: top;
+    align-items: left;
+    padding: 50px 20px;
+    gap: 20px;
+    animation: flicker 2s infinite alternate;
+    flex-direction: column;
+  }
+
+  @keyframes flicker {
+    0% { box-shadow: 0 0 10px #00f6ff, 0 0 25px rgba(0, 246, 255, 0.6); }
+    100% { box-shadow: 0 0 25px #00f6ff, 0 0 60px rgba(0, 246, 255, 0.9); }
+  }
+</style>
+</head>
+<body>
+
+<!-- Opening Overlay -->
+<div class="opening-overlay">
+  <div class="diamond"></div>
+</div>
+
+<!-- Main content -->
+<div class="site-content">
+  <!-- Title -->
+  <header>
+    <h1>School Projects</h1>
+  </header>
+
+  <!-- Intro text -->
+  <div class="intro-text">
+    This is a list of School Classes and their associated projects that I have completed. Their descriptions of what I have learned are included.
+  </div>
+
+  <div class = "menu">
+    <h1>Python</h1>
+    <p>
+      <b>Introduction to Programming ICS 31:</b><br>Introduction to fundamental concepts and techniques for writing software in a high-level programming language. 
+      Covers the syntax and semantics of data types, expressions, exceptions, control structures, input/output, methods, classes, and pragmatics of programming.
+      <ul>
+      <li>Sokoban</li>
+       <li>Olympics Screener</li>
+        <li>2048</li>
+        </ul>
+    </p>
+    <p>
+    <b>Programming with Software Libraries ICS 32:</b><br>Construction of programs for problems and computing environments more varied than in I&C SCI 31. 
+    Using library modules for applications such as graphics, sound, GUI, database, Web, and network programming. Language features beyond those in I&C SCI 31 are introduced as needed. 
+        <ul>
+      <li>File System Inspector</li>
+       <li>File Explorer</li>
+        <li>Journal</li>
+        <li>Publishing Online</li>
+        <li>Direct Messaging Chat</li>
+        </ul>
+    </p>
+    <p>
+    <b>Intermediate Programming ICS 33:</b><br>Intermediate-level language features and programming concepts for larger, more complex, higher-quality software. 
+    Functional programming, name spaces, modules, class protocols, inheritance, iterators, generators, operator overloading, reflection. Analysis of time and space efficiency. 
+
+        <ul>
+      <li>Distribution system</li>
+       <li>Dimensional Classes</li>
+        <li>Programs Making Programs</li>
+        <li>Overloading and Decorators</li>
+        <li>Inheritance with Images</li>
+        </ul>
+    </p>
+    <p>
+    <b>Introduction to Artificial Intelligence COMPSCI 171:</b><br>Different means of representing knowledge and uses of representations in heuristic problem solving. 
+    Representations considered include predicate logic, semantic nets, procedural representations, natural language grammars, and search trees.
+
+        <ul>
+      <li>Bayesian Networks</li>
+       <li>Hill Climbing & Simulated Annealing</li>
+        <li>STRIPS</li>
+        <li>A* Search</li>
+        </ul>
+    </p>
+
+    <h1>Java</h1>
+    <p>
+    <b>Advanced Placement Computer Science A:</b><br>AP Computer Science A is an introductory college-level computer science course. 
+    Students cultivate their understanding of coding through analyzing, writing, and testing code as they explore concepts like modularity, variables, and control structures. 
+    </p>
+
+    <h1>C++</h1>
+    <p>
+      <b>Programming in C/C++ as a Second Language ICS 45C:</b><br>An introduction to the lexical, syntactic, semantic, and pragmatic characteristics of the C/C++ languages for experienced programmers. 
+      Emphasis on object-oriented programming, using standard libraries, and programming with manual garbage collection. 
+
+      <ul>
+    <li>Cheating Hangman</li>
+    <li>Assembly</li>
+    <li>Hot Potato</li>
+    <li>Class Rankings</li>
+    <li>Doubly Linked List</Li>
+        </ul>
+    </p>
+    <p>
+      <b>Data Structure Implementation and Analysis ICS 46:</b><br> Focuses on implementation and mathematical analysis of fundamental data structures and algorithms. Covers storage allocation and memory management techniques. 
+      <ul>
+    <li>Verifier, Stack, and Calc</li>
+    <li>Combinatorial Puzzles</li>
+    <li>Hot Potato</li>
+    <li>Skip List</li>
+    <li>Cuckoo Hash Table</Li>
+    <li>Crumple Trees</Li>
+    <li>Word Ladders</Li>
+    <li>Interference Graph & Register Allocation</Li>
+    </ul>
+    </p>
+
+    <h1>Assembly</h1>
+    <p>
+      <b>Introductory Computer Organization ICS 51:</b><br>Multilevel view, design, and operation of computer system components. Machine-level data and instruction representation. 
+      Instruction sets and addressing modes. Memory organization. Laboratory work using low-level programming languages. 
+
+      <ul>
+    <li>Determinants</li>
+    <li>Fibonacci</li>
+    <li>Maxima</li>
+    <li>Letter Cases</Li>
+    <li>Recursion</Li>
+    <li>Affine Rotation, Scale, Shear, Identity</Li>
+    </ul>
+    </p>
+
+    <h1>C</h1>
+    <p>
+      <b>Principles in System Design ICS 53 :</b><br>Introduces basic principles of system software: operating systems, compilers, and networking. 
+      Exposure to the following topics through theoretical and practical programming experiences: linking and loading, process and memory management, concurrency and synchronization, network communication, programming for performance, etc. 
+      <ul>
+    <li>Command Line tools</li>
+    <li>Pointers & Dynamic Memory</li>
+    <li>Shell with background processes, signals, piping, & Redirection</li>
+    <li>Dynamic Memory Allocator</Li>
+    <li>Multi-threaded Servers</Li>
+    </ul>
+    </p>
+
+    <h1>C#</h1>
+    <p>
+      <b>Introduction to Virtual Reality COMPSCI 118:</b><br>Introduces virtual reality systems and software. Topics include computer graphics pipeline, human visual system and perception, head mounted displays, image formation, sensors and tracking, and 3D sound. 
+      Students use a popular cross-platform game engine to create VR environments. 
+      <ul>
+    <li>Rocky Lagoon</li>
+    </ul>
+    </p>
+
+    <h1>R</h1>
+    <p>
+      <b>Operation Wallacea Internship:</b><br>Introduces data visualization techniques using R. Topics include principles of graphical perception, exploratory data analysis, ggplot2 syntax and design, customizing visualizations, interactive graphics, and effective communication of data. Students use R and its visualization libraries to create a variety of static and interactive graphs. 
+      <ul>
+    <li>located as a research paper in the research paper tab</li>
+    </ul>
+    </p>
+  </div>
+
+  
+
+<script>
+  // Show site content once overlay animation ends
+  window.addEventListener("load", () => {
+    const overlay = document.querySelector(".opening-overlay");
+    const content = document.querySelector(".site-content");
+    overlay.addEventListener("animationend", () => {
+      overlay.style.display = "none";
+      content.classList.add("show");
+    });
+  });
+</script>
+</body>
+</html>
