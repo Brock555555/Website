@@ -107,6 +107,26 @@
     flex-direction: column;
   }
 
+  .button-grid {
+    background: rgba(0, 246, 255, 0.2);
+    border: 2px solid #00f6ff;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 15px 30px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center; /* center horizontally */
+    width: 100%;
+  }
+
+  .button-grid button:hover {
+    background: #00f6ff;
+    color: #000;
+    box-shadow: 0 0 20px #00f6ff, 0 0 40px #00f6ff;
+  }
+
   @keyframes flicker {
     0% { box-shadow: 0 0 10px #00f6ff, 0 0 25px rgba(0, 246, 255, 0.6); }
     100% { box-shadow: 0 0 25px #00f6ff, 0 0 60px rgba(0, 246, 255, 0.9); }
@@ -254,8 +274,13 @@
       <ul>
     <li>located as a research paper in the research paper tab</li>
     </ul>
-    </p>
+  </p>
+  <div class="button-grid">
+    <button onclick="window.location.href='front.html'">Home page</button>
+
   </div>
+  </div>
+
 
   
 
