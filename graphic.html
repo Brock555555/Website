@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thesis & Research</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: radial-gradient(circle at center, #0a0a0f 0%, #000000 100%);
+    font-family: 'Segoe UI', sans-serif;
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ====== Opening Animation Overlay ====== */
+  .opening-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeOut 0.8s ease forwards;
+    animation-delay: 2.2s; /* Wait until spin finishes */
+  }
+
+  /* Hollow diamond using borders */
+  .diamond {
+    width: 500px;
+    height: 500px;
+    transform: rotate(45deg);
+    border: 5px solid #00f6ff;
+    background: transparent;
+    box-shadow: 0 0 20px #00f6ff, 0 0 40px #00f6ff, 0 0 60px #00f6ff;
+    animation: spin 2s cubic-bezier(0.68,-0.55,0.27,1.55);
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(45deg) scale(0.33); opacity: 0; }
+    33% { transform: rotate(45deg) scale(0.66); opacity: 1;}
+    100% { transform: rotate(450deg) scale(3); opacity: 1; }
+  }
+
+  @keyframes fadeOut {
+    to { opacity: 0; visibility: hidden; }
+  }
+
+  /* Hide main content until overlay is gone */
+  .site-content {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+  }
+  .site-content.show {
+    opacity: 1;
+  }
+
+  /* ====== Intro text ====== */
+  .intro-text {
+    width: 100%;
+    padding: 30px 20px;
+    text-align: center;
+    background: rgba(10, 10, 30, 0.8);
+    border-bottom: 2px solid #00f6ff;
+    box-shadow: 0 0 10px #00f6ff, 0 0 20px rgba(0, 246, 255, 0.5);
+    font-size: 1.2rem;
+  }
+
+  /* ====== Title ====== */
+  header {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    background: rgba(10, 10, 30, 0.9);
+    border-bottom: 3px solid #00f6ff;
+    box-shadow: 0 0 15px #00f6ff, 0 0 30px rgba(0, 246, 255, 0.7);
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+    text-shadow: 0 0 15px #00f6ff, 0 0 30px #00f6ff;
+  }
+
+  /* ====== Menu container ====== */
+  .menu {
+    width: 100%;
+    min-height: calc(100vh - 160px);
+    background: rgba(10, 10, 30, 0.85);
+    border: 3px solid #00f6ff;
+    border-top: none;
+    box-shadow: 0 0 20px #00f6ff, 0 0 60px rgba(0, 246, 255, 0.7);
+    display: flex;
+    justify-content: top;
+    align-items: center;
+    padding: 50px 20px;
+    gap: 60px;
+    animation: flicker 2s infinite alternate;
+    flex-direction: column;
+  }
+
+  .button-grid button{
+    background: rgba(0, 246, 255, 0.2);
+    border: 2px solid #00f6ff;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 15px 30px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center; /* center horizontally */
+    width: 100%;
+  }
+
+  .button-grid button:hover {
+    background: #00f6ff;
+    color: #000;
+    box-shadow: 0 0 20px #00f6ff, 0 0 40px #00f6ff;
+  }
+  @keyframes flicker {
+    0% { box-shadow: 0 0 10px #00f6ff, 0 0 25px rgba(0, 246, 255, 0.6); }
+    100% { box-shadow: 0 0 25px #00f6ff, 0 0 60px rgba(0, 246, 255, 0.9); }
+  }
+</style>
+</head>
+<body>
+
+<!-- Opening Overlay -->
+<div class="opening-overlay">
+  <div class="diamond"></div>
+</div>
+
+<!-- Main content -->
+<div class="site-content">
+  <!-- Title -->
+  <header>
+    <h1>Research and Thesis Projects</h1>
+  </header>
+
+  <!-- Intro text -->
+  <div class="intro-text">
+    This page is composed of a series of pdfs and links to research papers I have completed over the course of high school and college.
+  </div>
+
+  <div class = "menu">
+    
+    <div class="button-grid">
+    <button onclick="window.location.href='front.html'">Home page</button>
+
+  </div>
+
+  
+
+<script>
+  // Show site content once overlay animation ends
+  window.addEventListener("load", () => {
+    const overlay = document.querySelector(".opening-overlay");
+    const content = document.querySelector(".site-content");
+    overlay.addEventListener("animationend", () => {
+      overlay.style.display = "none";
+      content.classList.add("show");
+    });
+  });
+</script>
+</body>
+</html>
